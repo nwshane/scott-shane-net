@@ -1,16 +1,38 @@
 import React from "react";
+import { getJSON } from "jquery";
+import moment from "moment";
+
 import Head from "../components/head";
 
 export default class MediaPage extends React.Component {
-  render() {
-    const mediaItems = [
-      {
-        title: "bla",
-        link: "https://google.com",
-        publication_date: new Date(2018, 1, 3),
-        description: "hi there"
+  state = {
+    mediaItems: []
+  };
+
+  componentDidMount() {
+    const spreadsheetId = "1iOliJOKefnIxrlmMkvmgspcdcQ4aR0fWwQhI-IC-1AU";
+
+    getJSON(
+      `http://spreadsheets.google.com/feeds/list/${spreadsheetId}/od6/public/values?alt=json`,
+      data => {
+        this.setState({
+          mediaItems: data.feed.entry.map(entryItem => {
+            const gsxKeys = Object.keys(entryItem).filter(key =>
+              key.includes("gsx$")
+            );
+
+            return gsxKeys.reduce((mediaItem, gsxKey) => {
+              mediaItem[gsxKey.replace("gsx$", "")] = entryItem[gsxKey].$t;
+              return mediaItem;
+            }, {});
+          })
+        });
       }
-    ];
+    );
+  }
+
+  render() {
+    const { mediaItems } = this.state;
     return (
       <div>
         <Head
@@ -18,21 +40,21 @@ export default class MediaPage extends React.Component {
           description="Interviews, book talks, and more with Scott Shane, national security reporter for The New York Times and author of Objective Troy."
         />
 
-        <h1 class="primary-header">
-          Media for <span class="book-title">Objective Troy</span>
+        <h1 className="primary-header">
+          Media for <span className="book-title">Objective Troy</span>
         </h1>
 
         <div>
           {mediaItems.map(mediaItem => (
-            <section class="media-item">
+            <section className="media-item" key={mediaItem.title}>
               <h2>
                 <a href={mediaItem.link} target="_blank">
                   {mediaItem.title}
                 </a>
               </h2>
 
-              <p class="media-item-publication-date">
-                {mediaItem.publication_date.getFullYear()}
+              <p className="media-item-publication-date">
+                {moment(mediaItem.date, "MM-DD-YYYY").format("MMMM D, YYYY")}
               </p>
 
               {mediaItem.description && (
