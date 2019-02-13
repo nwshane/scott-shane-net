@@ -1,0 +1,72 @@
+.review {
+}
+
+  .review-excerpt {
+    font-style: italic;
+  }
+
+    // Anything specified in italic in the TinyMCE editor is marked up as em
+    // Reviews are already displayed in italics, so italic text (such as book
+    // title) is displayed as normal so that it stands out.
+    .review-excerpt em {
+      font-style: normal;
+    }
+
+  .review-attribution {
+    font-weight: 700;
+  }
+
+  .review-attribution::before {
+    content: ' - '
+  }
+
+  .review-link {
+    font-style: normal;
+    text-decoration: underline;
+
+    @media print {
+      display: none;
+    }
+  }
+
+// Used on reviews page
+.review.mod-full {
+  margin-bottom: 2.5em;
+
+  .review-attribution {
+    display: block;
+    text-align: center;
+  }
+}
+
+// Featured review slideshow (cannot change bx class names)
+.bx-wrapper {
+  padding-bottom: 15px;
+
+  @media print {
+    display: none !important;
+  }
+}
+
+  // Added class to override bx library's CSS
+  .bx-wrapper .bx-viewport {
+    // Remove border
+    -moz-box-shadow: 0;
+    -webkit-box-shadow: 0;
+    box-shadow: none;
+    border: 0;
+    left: 0;
+  }
+
+.review.mod-featured {
+  text-align: justify;
+  width: inherit;
+}
+
+.review.mod-temporary {
+  margin-bottom: 4em;
+}
+
+.review.is-hidden {
+  display: none;
+}

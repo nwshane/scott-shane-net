@@ -1,0 +1,44 @@
+$twitter-style-border: 1px solid rgb(232, 232, 232);
+
+$nyt-article-feed-list-height: 556px;
+
+.nyt-article-feed {
+  border: $twitter-style-border;
+  border-radius: 5px;
+}
+
+  .nyt-article-feed-heading {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.5em;
+  }
+
+  .nyt-article-feed-list {
+    list-style-type: none;
+    padding-left: 0;
+    height: $nyt-article-feed-list-height;
+    overflow-y: scroll;
+    border-top: $twitter-style-border;
+  }
+
+  .nyt-article-feed-item {
+    border-bottom: $twitter-style-border;
+    display: block;
+
+    padding: 0.5em;
+  }
+
+  .nyt-article-feed-item:last-child {
+    border-bottom: none;
+  }
+
+    .nyt-article-feed-item-heading {
+      font-size: 0.9em;
+      margin: 0;
+    }
+
+    .nyt-article-feed-item-date {
+      font-size: .8em;
+      color: $lightened-text-color;
+    }

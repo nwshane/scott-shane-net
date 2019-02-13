@@ -1,0 +1,67 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: $footer-change-width) {
+  body {
+    margin-bottom: $footer-height-big-screen;
+  }
+}
+
+@media (max-width: ($footer-change-width - 1)) {
+  body {
+    margin-bottom: $footer-height-small-screen;
+  }
+}
+
+@media print {
+  body {
+    margin-bottom: 0;
+  }
+}
+
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 7px 20px 0;
+  font-size: 0.8em;
+  color: #4f4f4f;
+
+  @media print {
+    display: none;
+  }
+}
+
+@include media-footer-format-big-screen {
+  height: $footer-height-big-screen;
+}
+
+@include media-footer-format-small-screen {
+  height: $footer-height-small-screen;
+}
+
+  .app-footer-acknowledgments {
+  }
+
+    .app-footer-acknowledgments-item {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $footer-change-width) {
+      .app-footer-acknowledgments-item.mod-banner-photo {
+        float: left;
+      }
+
+      .app-footer-acknowledgments-item.mod-scottshane {
+        float: right;
+      }
+    }
+
+    @media (max-width: ($footer-change-width - 1)) {
+      .app-footer-acknowledgments-item {
+        text-align: right;
+      }
+    }

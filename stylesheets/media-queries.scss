@@ -1,0 +1,25 @@
+// Shrink Header for small screens
+@mixin media-header-small-screen {
+  @media (max-width: 385px) {
+    @content;
+  }
+}
+
+@mixin media-header-smaller-screen {
+  @media (max-width: 315px) {
+    @content;
+  }
+}
+
+// App-Footer
+@mixin media-footer-format-big-screen {
+  @media (min-width: $footer-change-width) {
+    @content;
+  }
+}
+
+@mixin media-footer-format-small-screen {
+  @media (max-width: ($footer-change-width - 1)) {
+    @content;
+  }
+}

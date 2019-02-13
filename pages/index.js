@@ -3,6 +3,8 @@ import Link from "next/link";
 import Head from "../components/head";
 import Nav from "../components/nav";
 
+import "../stylesheets/application.scss";
+
 const Home = () => (
   <div>
     <Head title="Home" />

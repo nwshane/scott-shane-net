@@ -1,0 +1,89 @@
+h1 {
+  font-size: 2.5em;
+}
+
+body {
+  font-family: "Crete Round", serif;
+  font-size: 20px;
+  line-height: 1.7em;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+span.book-title {
+  font-style: italic;
+}
+
+figcaption {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+/**************************************/
+/* make bootstrap button link color stay white */
+a.btn,
+a.btn:visited {
+  color: #000;
+}
+
+a.btn-primary,
+a.btn-primary:visited,
+a.btn-info,
+a.btn-info:visited,
+a.btn-success,
+a.btn-success:visited,
+a.btn-warning,
+a.btn-warning:visited,
+a.btn-danger,
+a.btn-danger:visited,
+a.btn-inverse,
+a.btn-inverse:visited {
+  color: #fff;
+}
+
+/**************************************/
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    width: initial;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+/* change navbar color to friendly black */
+.navbar-default .navbar-nav > li > a {
+  color: #dddddd;
+}
+
+.nav > li > a {
+  display: inline;
+}
+
+/* Remove border above collapsed navbar */
+.navbar-collapse {
+  border-top: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #dddddd;
+}
+
+/****************************************/
+.formtastic input {
+  padding: 6px 12px;
+}

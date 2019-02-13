@@ -1,0 +1,25 @@
+/****************************************/
+.book-excerpt {
+  // Excerpt images are 600px wide; this fits the text below the images and centered
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .book-excerpt-title {
+    font-size: 1.5em;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .book-excerpt-img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+  }
+
+  .book-excerpt-content {
+    font-style: italic;
+  }

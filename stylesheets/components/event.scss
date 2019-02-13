@@ -1,0 +1,60 @@
+.event {
+  margin: 2em 0;
+}
+
+  .event-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .event-name {
+    border-bottom: 1px solid;
+    margin-bottom: 0.6em;
+
+    @media (max-width: $column-break-width) {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  .event-datetime {
+    color: $lightened-text-color;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 1.5em;
+
+    @media (max-width: $column-break-width) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+    .event-datetime-date {
+      margin-bottom: 0;
+    }
+
+    .event-datetime-time {
+      margin-bottom: 0;
+    }
+
+  .event-info {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (max-width: $column-break-width) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+    .event-description {
+      margin-bottom: 1.5em;
+    }
+
+    .event-info-location {
+      margin-bottom: 0;
+      color: $lightened-text-color;
+    }
+
+      .event-info-location-link {
+        color: $lightened-link-color;
+      }

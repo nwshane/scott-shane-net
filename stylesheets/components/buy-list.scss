@@ -1,0 +1,33 @@
+.buy-list {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $break-image-text) {
+    flex-direction: row;
+  }
+
+  @media (max-width: $break-image-text) {
+    flex-direction: column;
+  }
+}
+
+  .buy-list-item {
+    list-style-type: none;
+  }
+
+  .buy-list-item.mod-text {
+    font-weight: bold;
+    text-align: center;
+    max-width: 5em;
+    flex: 3;
+
+    @media (max-width: $break-image-text) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .buy-list-item.mod-img {
+    flex: 2;
+  }

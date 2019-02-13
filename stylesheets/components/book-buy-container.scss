@@ -1,0 +1,36 @@
+.book-buy-container {
+  padding-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: flex;
+
+  @media (min-width: $break-image-text) {
+    float: right;
+    flex-flow: column;
+    margin-left: 40px;
+  }
+}
+
+  .book-buy-container-link {
+  }
+
+    .book-buy-container-link-image {
+      width: 100%;
+      max-width: 372px;
+      max-height: 600px;
+
+      @media (min-width: $break-image-text) {
+        padding-bottom: 20px;
+      }
+    }
+
+  .book-buy-container-list {
+    width: 10em;
+
+    @media (min-width: $break-image-text) {
+      width: 100%;
+    }
+
+    @media print {
+      display: none;
+    }
+  }

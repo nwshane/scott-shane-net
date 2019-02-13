@@ -1,0 +1,20 @@
+.scott-shane-portrait {
+  padding: 0 25px;
+
+  @media print {
+    float: right;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: $break-image-text) {
+  .scott-shane-portrait {
+    float: right;
+  }
+}
+
+@media (max-width: $break-image-text) {
+  .scott-shane-portrait img {
+    max-width: 100%;
+  }
+}
