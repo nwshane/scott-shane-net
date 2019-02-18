@@ -3,8 +3,6 @@ import React from "react";
 import Head from "../components/head";
 import Layout from "../components/layout";
 
-import "../stylesheets/application.scss";
-
 export default () => (
   <Layout>
     <Head
