@@ -34,7 +34,7 @@ export default ({ showObjectiveTroyLink }) => (
             <a href="/bio">About Scott</a>
           </li>
           <li>
-            <a href="/objectivetroy/reviews">Reviews</a>
+            <a href="/reviews">Reviews</a>
           </li>
           <li>
             <a href="/media">Media</a>

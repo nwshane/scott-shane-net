@@ -5,8 +5,6 @@ import moment from "moment";
 import Head from "../components/head";
 import Layout from "../components/layout";
 
-import "../stylesheets/application.scss";
-
 const mapSpreadsheetDataToItems = spreadsheetData =>
   spreadsheetData.feed.entry.map(entryItem => {
     const gsxKeys = Object.keys(entryItem).filter(key => key.includes("gsx$"));
