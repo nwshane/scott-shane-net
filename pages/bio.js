@@ -11,9 +11,9 @@ export default () => (
     />
 
     <article>
-      <h1 class="primary-header mod-bio">About Scott Shane</h1>
+      <h1 className="primary-header mod-bio">About Scott Shane</h1>
 
-      <figure class="scott-shane-portrait">
+      <figure className="scott-shane-portrait">
         <img
           src="static/Scott-Shane-Author-and-Journalist-Smiling-Portrait.jpg"
           alt="Scott Shane Author and Journalist Smiling Portrait"
@@ -46,14 +46,14 @@ export default () => (
           on brain surgery, schizophrenia, a drug corner, guns and crime and
           other topics. He was The Sun's Moscow correspondent from 1988 to 1991
           and wrote a book on the Soviet collapse,{" "}
-          <span class="book-title">
+          <span className="book-title">
             Dismantling Utopia: How Information Ended the Soviet Union
           </span>
           , which the Los Angeles Times described as "one of the essential works
           on the fall of the Soviet Union." In 1995, he co-wrote a six-part
           explanatory series of articles on the National Security Agency, the
           first major investigation of NSA since James Bamford's 1982 book{" "}
-          <span class="book-title">The Puzzle Palace</span>. His series on a
+          <span className="book-title">The Puzzle Palace</span>. His series on a
           public health project in Nepal won the nation's top science-writing
           award from the American Association for the Advancement of Science in
           2001.
