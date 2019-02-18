@@ -9,7 +9,7 @@
   // License URL: https://creativecommons.org/licenses/by/2.0/
   // Flickr URL: https://www.flickr.com/photos/rocketboom/2816811574/in/photolist-5hUTWN-5HJ2V5-53EbFZ-8QWudc-86EPJy-ePDzyY-86BCTF-5FcxhC-4JZfZV-d5K46S-55wHhT-s3nq97-8HxkqY-bxU5QJ-5FDH2i-d8KrFb-5hQruV-e6LpUo-gcuAeT-5hQsSK-5hQwD6-8Dk9jd-5hUMyQ-5hQv4R-5hQr8t-7nNYtz-PzrQA-dWh5Xn-dNb5PH-btwu4L-6r6gAX-atTJT2-5Fcw1N-5hQrRB-bw4byT-aEJ8Rk-7EezQd-dSA683-5FHYK3-82btr8-6qDfwp-dNbzmv-rYzdjs-7LE4up-bv9Tw6-8Hucqv-prqAx9-4m7SNM-dNfTxb-dNbHH4
   // Modifications: Rotated slightly to right and cropped
-  background-image: url(asset-path('Desert-Background.jpg'));
+  background-image: url("../static/Desert-Background.jpg");
   background-color: rgb(199, 169, 148);
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,10 +53,10 @@ a.navbar-brand {
   }
 }
 
-.navbar-default a.navbar-brand:hover, .navbar-default a.navbar-brand:focus {
+.navbar-default a.navbar-brand:hover,
+.navbar-default a.navbar-brand:focus {
   color: #333;
 }
-
 
 /**********************************************/
 /* Nav links */
@@ -101,8 +101,9 @@ a.navbar-brand {
 
 /**********************************************/
 /* Navbar height */
-@media(min-width: $grid-float-breakpoint) {
-  .navbar, .navbar .nav {
+@media (min-width: $grid-float-breakpoint) {
+  .navbar,
+  .navbar .nav {
     min-height: 160px;
   }
 }
@@ -114,7 +115,7 @@ a.navbar-brand {
   a {
     height: 54px;
 
-    @media(max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint) {
       padding-bottom: 5px !important;
       padding-top: 5px !important;
     }
@@ -133,8 +134,7 @@ a.navbar-brand {
   margin-bottom: 1.5em;
 }
 
-.container > .navbar-collapse
-{
-  margin-left:0px;
-  margin-right:0px;
+.container > .navbar-collapse {
+  margin-left: 0px;
+  margin-right: 0px;
 }

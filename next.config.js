@@ -1,11 +1,15 @@
 const withSass = require("@zeit/next-sass");
-module.exports = withSass({
-  webpack: config => {
-    // Fixes npm packages that depend on `fs` module
-    config.node = {
-      fs: "empty"
-    };
+const withOptimizedImages = require("next-optimized-images");
 
-    return config;
-  }
-});
+module.exports = withOptimizedImages(
+  withSass({
+    webpack: config => {
+      // Fixes npm packages that depend on `fs` module
+      config.node = {
+        fs: "empty"
+      };
+
+      return config;
+    }
+  })
+);

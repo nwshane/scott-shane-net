@@ -3,6 +3,7 @@ import { getJSON } from "jquery";
 import moment from "moment";
 
 import Head from "../components/head";
+import Layout from "../components/layout";
 
 import "../stylesheets/application.scss";
 
@@ -34,7 +35,7 @@ export default () => {
   }, []);
 
   return (
-    <main className="container">
+    <Layout>
       <Head
         title="Media"
         description="Interviews, book talks, and more with Scott Shane, national security reporter for The New York Times and author of Objective Troy."
@@ -66,6 +67,6 @@ export default () => {
           </section>
         ))}
       </div>
-    </main>
+    </Layout>
   );
 };
