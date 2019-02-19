@@ -1,69 +1,39 @@
 import React from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
-export default ({ showObjectiveTroyLink }) => (
-  <nav className="navbar navbar-default navbar-static-top">
+export default ({ isObjectiveTroyPage }) => (
+  <Navbar>
     <h2 className="heading is-hidden">Site Navigation</h2>
-    <div className="container">
-      <button
-        type="button"
-        className="navbar-toggle"
-        data-toggle="collapse"
-        data-target=".navbar-responsive-collapse"
-      >
-        <span className="icon-bar" />
-        <span className="icon-bar" />
-        <span className="icon-bar" />
-      </button>
-      <a className="navbar-brand" href="/bio">
-        <span>Scott Shane</span>
+    <Navbar.Brand href="/bio">
+      <span>Scott Shane</span>
+      <br />
+      <small>
+        New York Times
         <br />
-        <small>
-          New York Times
-          <br />
-          Journalist and Author
-        </small>
-      </a>
-      <div className="navbar-collapse collapse navbar-responsive-collapse">
-        <ul className="nav navbar-nav navbar-right">
-          {showObjectiveTroyLink && (
-            <li className="featured">
-              <a href="/objectivetroy">Objective Troy</a>
-            </li>
-          )}
-          <li>
-            <a href="/bio">About Scott</a>
-          </li>
-          <li>
-            <a href="/reviews">Reviews</a>
-          </li>
-          <li>
-            <a href="/media">Media</a>
-          </li>
-          <li>
-            <a href="/events">Events</a>
-          </li>
-          <li>
-            <a
-              href="#"
-              data-toggle="modal"
-              data-target=".js-open-buy-book-modal"
-            >
-              Buy the Book
-            </a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-          <li className="social-icons">
-            <a href="https://twitter.com/ScottShaneNYT" target="_blank">
-              <img
-                src="static/Social-Icons/Twitter.png"
-                alt="Twitter Social Media Icon"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        Journalist and Author
+      </small>
+    </Navbar.Brand>
+
+    <Navbar.Toggle />
+    <Navbar.Collapse>
+      <Nav>
+        {!isObjectiveTroyPage && (
+          <Nav.Link href="/objectivetroy">Objective Troy</Nav.Link>
+        )}
+        <Nav.Link href="/bio">About Scott</Nav.Link>
+        <Nav.Link href="/reviews">Reviews</Nav.Link>
+        <Nav.Link href="/media">Media</Nav.Link>
+        <Nav.Link href="/events">Events</Nav.Link>
+        <Nav.Link href="#">Buy the Book</Nav.Link>
+        <Nav.Link href="/contact">Contact</Nav.Link>
+        <Nav.Link href="https://twitter.com/ScottShaneNYT" target="_blank">
+          <img
+            src="static/Social-Icons/Twitter.png"
+            alt="Twitter Social Media Icon"
+          />
+        </Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 );
