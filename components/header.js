@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import {
+  Nav,
+  Navbar,
+  NavLink,
+  NavItem,
+  Collapse,
+  NavbarBrand,
+  NavbarToggler
+} from "reactstrap";
 import { withRouter } from "next/router";
 
 const isObjectiveTroyPage = router =>
@@ -11,14 +18,9 @@ const Header = ({ showBuyBookModal, router }) => {
 
   return (
     <div className="navbar-container">
-      <Navbar
-        className="container"
-        expand="sm"
-        expanded={expanded}
-        onToggle={setExpanded}
-      >
+      <Navbar className="container" expand="xl">
         <h2 className="heading is-hidden">Site Navigation</h2>
-        <Navbar.Brand href="/bio">
+        <NavbarBrand href="/bio">
           <span>Scott Shane</span>
           <br />
           <small>
@@ -26,37 +28,33 @@ const Header = ({ showBuyBookModal, router }) => {
             <br />
             Journalist and Author
           </small>
-        </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
+        </NavbarBrand>
+        <NavbarToggler onClick={() => setExpanded(!expanded)} />
+        <Collapse isOpen={expanded} navbar>
+          <div className="navbar-links">
             {!isObjectiveTroyPage(router) && (
-              <Nav.Link className="nav-link-featured" href="/objectivetroy">
+              <NavLink className="nav-link-featured" href="/objectivetroy">
                 Objective Troy
-              </Nav.Link>
+              </NavLink>
             )}
             <div className="non-featured-link-nav">
-              <Nav.Link href="/bio">About Scott</Nav.Link>
-              <Nav.Link href="/reviews">Reviews</Nav.Link>
-              <Nav.Link href="/media">Media</Nav.Link>
-              <Nav.Link href="/events">Events</Nav.Link>
-              <Nav.Link href="#" onClick={showBuyBookModal}>
+              <NavLink href="/bio">About Scott</NavLink>
+              <NavLink href="/reviews">Reviews</NavLink>
+              <NavLink href="/media">Media</NavLink>
+              <NavLink href="/events">Events</NavLink>
+              <NavLink href="#" onClick={showBuyBookModal}>
                 Buy the Book
-              </Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
-              <Nav.Link
-                href="https://twitter.com/ScottShaneNYT"
-                target="_blank"
-              >
+              </NavLink>
+              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="https://twitter.com/ScottShaneNYT" target="_blank">
                 <img
                   src="static/Social-Icons/Twitter.png"
                   alt="Twitter Social Media Icon"
                 />
-              </Nav.Link>
+              </NavLink>
             </div>
-          </Nav>
-        </Navbar.Collapse>
+          </div>
+        </Collapse>
         <style jsx global>{`
           .navbar-container {
             /* Photographer: Parker Knight
@@ -107,7 +105,12 @@ const Header = ({ showBuyBookModal, router }) => {
             font-size: 1em;
           }
 
-          .navbar-nav {
+          .navbar-collapse {
+            display: flex;
+            justify-content: flex-end;
+          }
+
+          .navbar-links {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
