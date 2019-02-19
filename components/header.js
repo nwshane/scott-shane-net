@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import { withRouter } from "next/router";
 
-export default ({ isObjectiveTroyPage }) => {
+const isObjectiveTroyPage = router =>
+  router.pathname.includes("/objectivetroy");
+
+const Header = ({ router }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -27,7 +31,7 @@ export default ({ isObjectiveTroyPage }) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            {!isObjectiveTroyPage && (
+            {!isObjectiveTroyPage(router) && (
               <Nav.Link className="nav-link-featured" href="/objectivetroy">
                 Objective Troy
               </Nav.Link>
@@ -130,3 +134,5 @@ export default ({ isObjectiveTroyPage }) => {
     </div>
   );
 };
+
+export default withRouter(Header);
