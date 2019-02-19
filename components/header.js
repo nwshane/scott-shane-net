@@ -28,20 +28,27 @@ export default ({ isObjectiveTroyPage }) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
             {!isObjectiveTroyPage && (
-              <Nav.Link href="/objectivetroy">Objective Troy</Nav.Link>
+              <Nav.Link className="nav-link-featured" href="/objectivetroy">
+                Objective Troy
+              </Nav.Link>
             )}
-            <Nav.Link href="/bio">About Scott</Nav.Link>
-            <Nav.Link href="/reviews">Reviews</Nav.Link>
-            <Nav.Link href="/media">Media</Nav.Link>
-            <Nav.Link href="/events">Events</Nav.Link>
-            <Nav.Link href="#">Buy the Book</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
-            <Nav.Link href="https://twitter.com/ScottShaneNYT" target="_blank">
-              <img
-                src="static/Social-Icons/Twitter.png"
-                alt="Twitter Social Media Icon"
-              />
-            </Nav.Link>
+            <div className="non-featured-link-nav">
+              <Nav.Link href="/bio">About Scott</Nav.Link>
+              <Nav.Link href="/reviews">Reviews</Nav.Link>
+              <Nav.Link href="/media">Media</Nav.Link>
+              <Nav.Link href="/events">Events</Nav.Link>
+              <Nav.Link href="#">Buy the Book</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
+              <Nav.Link
+                href="https://twitter.com/ScottShaneNYT"
+                target="_blank"
+              >
+                <img
+                  src="static/Social-Icons/Twitter.png"
+                  alt="Twitter Social Media Icon"
+                />
+              </Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
         <style jsx global>{`
@@ -58,8 +65,6 @@ export default ({ isObjectiveTroyPage }) => {
             background-color: rgb(199, 169, 148);
             background-repeat: no-repeat;
             background-size: cover;
-
-            padding: 15px 0;
           }
 
           .navbar {
@@ -85,6 +90,8 @@ export default ({ isObjectiveTroyPage }) => {
             line-height: 1em;
             line-height: initial;
             font-size: 1em;
+
+            padding: 15px 0 35px;
           }
           a.navbar-brand span {
             font-size: 2.2em;
@@ -96,7 +103,27 @@ export default ({ isObjectiveTroyPage }) => {
 
           .navbar-nav {
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            align-items: flex-end;
+          }
+
+          .nav-link-featured {
+            display: block;
+            font-size: 3em;
+            height: 100%;
+            padding-top: 30px;
+          }
+
+          .non-featured-link-nav {
+            display: flex;
             align-items: center;
+            padding-bottom: 15px;
+          }
+
+          .non-featured-link-nav .nav-link {
+            padding: 0 15px;
           }
         `}</style>
       </Navbar>
