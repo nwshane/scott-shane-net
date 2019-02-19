@@ -6,7 +6,7 @@ import { withRouter } from "next/router";
 const isObjectiveTroyPage = router =>
   router.pathname.includes("/objectivetroy");
 
-const Header = ({ router }) => {
+const Header = ({ showBuyBookModal, router }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -41,7 +41,9 @@ const Header = ({ router }) => {
               <Nav.Link href="/reviews">Reviews</Nav.Link>
               <Nav.Link href="/media">Media</Nav.Link>
               <Nav.Link href="/events">Events</Nav.Link>
-              <Nav.Link href="#">Buy the Book</Nav.Link>
+              <Nav.Link href="#" onClick={showBuyBookModal}>
+                Buy the Book
+              </Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
               <Nav.Link
                 href="https://twitter.com/ScottShaneNYT"
